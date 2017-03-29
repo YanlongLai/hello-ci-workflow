@@ -8,7 +8,8 @@ machine:
 
 dependencies:
   override:
-    - sudo pip install python-dev awsebcli
+    - sudo apt-get install python-dev
+    - sudo pip install awsebcli
     - docker build -t hello-ci-workflow .
 
 test:
