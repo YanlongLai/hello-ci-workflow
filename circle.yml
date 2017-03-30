@@ -1,13 +1,14 @@
 # circle.yml
 machine:
-  # 安裝 eb 需要 python
-  python:
-    version: 2.7
+  # # 安裝 eb 需要 python
+  # python:
+  #   version: 2.7
   services:
     - docker
 
 dependencies:
   override:
+    - sudo apt-get install python-pip python-dev build-essential
     - sudo pip install 'awsebcli==3.7.4' --force-reinstall
     - docker build -t hello-ci-workflow .
 
